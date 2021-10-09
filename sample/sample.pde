@@ -1,17 +1,26 @@
-int size_x = 600;
-int size_y = 400;
-
-void setup(){
-  size(600, 400);
+void setup() {
+  size(640, 480);
   noStroke();
+  background(0);
 }
 
-void draw(){
-  int rect_size = 10;
-  for (int x = 0 ; x <= size_x ; x += rect_size) {
-    for (int y = 0 ; y <= size_x ; y += rect_size) {
-      fill(random(255), random(255), random(255));
-      rect(x, y, x + size_x, size_y);
-    }
+void draw() {
+  int width = 640;
+  int height = 480;
+  int center_x = width / 2;
+  int center_y = height/ 2;
+  
+  background(0);
+  for (int i = 0; i < 1080; i++) {
+    float r = random(10);
+    float dist = random(height - center_y - 30);
+    fill(random(255) ,random(255), random(255));
+    ellipse(center_x + dist * cos(i), center_y + dist * sin(i), r, r);
+  }
+  
+  saveFrame("frames/####.png");
+   
+  if (frameCount >= 600) { // 1800コマアニメーションした時
+    exit();
   }
 }

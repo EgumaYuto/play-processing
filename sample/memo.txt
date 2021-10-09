@@ -1,0 +1,1 @@
+ffmpeg -y -r 20 -pattern_type glob -i "./frames/*.png" -an -pix_fmt yuv420p -vcodec h264 -profile:v baseline sample.mp4
