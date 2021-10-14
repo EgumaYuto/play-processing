@@ -1,6 +1,6 @@
 void setup() {
    size(800, 800);
-   noLoop();
+   // noLoop();
    background(0);
 }
 
