@@ -10,7 +10,7 @@ void setup() {
 }
 
 void draw() {
-  background(0);
+  background(255);
   // image(img, 0, 0, width, height);
   int rate = 10;
     
@@ -19,13 +19,12 @@ void draw() {
       color pix = img.get(i * rate, j * rate);
       
       if (pix == color(255)) {
-        fill(0);
-      } else {
         fill(255);
+      } else {
+        fill(color(255, 0, 0), 128);
       }
       
-      circle(i * rate + rate/2, j * rate + rate/2, rate);
-      // print(i, j, img.get(i * rate, j * rate), "\n");
+      circle(i * rate + rate/2, j * rate + rate/2, rate * 0.8);
     }
   }
 }
